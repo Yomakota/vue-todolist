@@ -44,8 +44,8 @@ var app = new Vue(
             },
 
             // 2 - cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
-            toggleDone(toDoIndex) {
-                this.todos[toDoIndex].done = !this.todos[toDoIndex].done;
+            toggleDone(todo) {
+                todo.done = !todo.done;
             }
         }
     },
