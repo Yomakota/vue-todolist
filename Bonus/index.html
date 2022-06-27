@@ -25,7 +25,7 @@
 
         <div class="todo-container">
             <ul v-if="todos.length > 0">
-                <li v-for="todo, index in todos" :class="{'delete': todo.done }" @click="changeDone(index)" >{{ todo.text }}
+                <li v-for="todo, index in todos" :class="{'delete': todo.done }" @click="toggleDone(index)">{{ todo.text }}
                     <span @click="removeItem(index)"><i class="fa-solid fa-xmark"></i></span>
                 </li>
             </ul>

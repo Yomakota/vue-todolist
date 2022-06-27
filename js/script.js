@@ -23,7 +23,7 @@
 var app = new Vue(
     {
         el: '#root',
-
+        
         data: {
             todos: [
                 {
@@ -39,14 +39,16 @@ var app = new Vue(
                     done: true,
                 },
             ],
+            
+            newToDo: '',
         },
 
         // MILESTONE 2
         // Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 
         methods: {
-            removeItem(index) {
-                this.todos.splice(index, 1);
+            removeItem(toDoIndex) {
+                this.todos.splice(toDoIndex, 1);
             },
 
             // MILESTONE 3

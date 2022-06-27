@@ -8,8 +8,6 @@ var app = new Vue(
 
         data: {
 
-            newToDo: '',
-
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -24,11 +22,14 @@ var app = new Vue(
                     done: true,
                 },
             ],
+
+            newToDo: '',
+
         },
 
         methods: {
-            removeItem(index) {
-                this.todos.splice(index, 1);
+            removeItem(toDoIndex) {
+                this.todos.splice(toDoIndex, 1);
             },
 
             addToDo() {
@@ -43,9 +44,8 @@ var app = new Vue(
             },
 
             // 2 - cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
-
-            changeDone(index) {
-                this.todos[index].done = !this.todos[index].done;
+            toggleDone(toDoIndex) {
+                this.todos[toDoIndex].done = !this.todos[toDoIndex].done;
             }
         }
     },
