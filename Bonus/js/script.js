@@ -2,13 +2,14 @@
 
 // 1 - oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 
-// 2 - cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
-
 var app = new Vue(
     {
         el: '#root',
 
         data: {
+
+            newToDo: '',
+
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -40,6 +41,12 @@ var app = new Vue(
                     this.newToDo = '';
                 }
             },
+
+            // 2 - cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+
+            changeDone(index) {
+                this.todos[index].done = !this.todos[index].done;
+            }
         }
     },
 );
