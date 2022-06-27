@@ -1,0 +1,45 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* TODO INPUT */
+
+.input {
+    padding: 3em;
+    text-align: center;
+}
+
+.input input,
+.input button {
+    padding: .5em;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.input input {
+    width: 20%;
+    padding-left: 1.5em;
+}
+
+/* TO-DO-LIST */
+
+.todo-container {
+    background-color: aqua;
+    margin: auto;
+    width: 70%;
+    padding: 1.5em;
+}
+
+.todo-container li {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em;
+    border-bottom: 1px solid black;
+}
+
+.delete {
+    text-decoration: line-through 2px;
+}
