@@ -21,12 +21,27 @@
         <div class="input">
             <input v-model="newToDo" @keyup.enter="addToDo" type="text" placeholder="Nuovo Todo">
             <button @click="addToDo">Aggiungi</button>
+
+            <div class="text-filter">
+                <input @keyup="filterElementsByText()" v-model="userFilterText" type="text" placeholder="Filtra elementi per testo">
+            </div>
         </div>
 
         <div class="todo-container">
             <ul v-if="todos.length > 0">
-                <li v-for="todo, index in todos" :class="{'delete': todo.done }" @click="toggleDone(todo)">{{ todo.text }}
-                    <span @click="removeItem(index)"><i class="fa-solid fa-xmark"></i></span>
+                
+                <!-- Template base todo -->
+                <li v-for="todo, index in todos" v-if="todo.isVisible">
+
+                    <!-- cosi non ho piu il warn di vue che non trova todo index quando uso la funzione removeItem mentre prima con il click su li quando chiudevo tutto non trovava piu todo index -->
+                    <span @click="toggleDone(index)" :class="{'delete': todo.done}">
+                        {{todo.text}}
+                    </span>
+                    
+                    <span @click="removeItem(index)">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+
                 </li>
             </ul>
             <p v-else>"Hai finito le cose da fare"</p>

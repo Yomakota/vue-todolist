@@ -25,6 +25,9 @@ var app = new Vue(
         el: '#root',
         
         data: {
+
+            newToDo: '',
+            
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -40,7 +43,6 @@ var app = new Vue(
                 },
             ],
             
-            newToDo: '',
         },
 
         // MILESTONE 2
